@@ -1,0 +1,164 @@
+{
+  "scanner": {
+    "max_file_size": 10485760,
+    "parallel_scans": 4,
+    "timeout_per_file": 30,
+    "enable_deep_scan": true,
+    "min_confidence": 0.6
+  },
+  
+  "excluded_directories": [
+    ".git",
+    ".svn",
+    ".hg",
+    "node_modules",
+    "packages",
+    "bin",
+    "obj",
+    "Debug",
+    "Release",
+    "__pycache__",
+    "venv",
+    ".venv",
+    "env",
+    ".env",
+    ".vs",
+    ".vscode",
+    "dist",
+    "build",
+    "target",
+    ".idea"
+  ],
+  
+  "excluded_extensions": [
+    ".exe",
+    ".dll",
+    ".so",
+    ".dylib",
+    ".bin",
+    ".obj",
+    ".o",
+    ".pdb",
+    ".suo",
+    ".user",
+    ".cache",
+    ".tmp",
+    ".log",
+    ".bak",
+    ".swp"
+  ],
+  
+  "analyzers": {
+    "security": {
+      "enabled": true,
+      "check_sql_injection": true,
+      "check_xss": true,
+      "check_command_injection": true,
+      "check_path_traversal": true,
+      "check_weak_crypto": true,
+      "check_hardcoded_secrets": true,
+      "check_deserialization": true,
+      "check_auth_issues": true,
+      "check_windows_security": true,
+      "check_network_security": true
+    },
+    
+    "quality": {
+      "enabled": true,
+      "check_memory_issues": true,
+      "check_exception_handling": true,
+      "check_threading": true,
+      "check_complexity": true,
+      "check_solid_violations": true,
+      "check_null_handling": true,
+      "check_string_issues": true,
+      "check_resource_management": true,
+      "check_performance": true,
+      "max_method_length": 500,
+      "max_class_length": 2000,
+      "max_complexity": 10
+    },
+    
+    "configuration": {
+      "enabled": true,
+      "check_dotnet_config": true,
+      "check_connection_strings": true,
+      "check_dependencies": true,
+      "check_docker": true,
+      "check_powershell": true,
+      "check_iis": true,
+      "check_sensitive_data": true
+    }
+  },
+  
+  "reporting": {
+    "formats": ["html", "json"],
+    "output_directory": "./reports",
+    "include_code_snippets": true,
+    "include_recommendations": true,
+    "include_references": true,
+    "severity_levels": ["CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"],
+    "group_by": "severity"
+  },
+  
+  "severity_thresholds": {
+    "critical": {
+      "min_confidence": 0.8,
+      "auto_fail_build": false
+    },
+    "high": {
+      "min_confidence": 0.7,
+      "auto_fail_build": false
+    },
+    "medium": {
+      "min_confidence": 0.6,
+      "auto_fail_build": false
+    },
+    "low": {
+      "min_confidence": 0.5,
+      "auto_fail_build": false
+    }
+  },
+  
+  "ci_cd": {
+    "fail_on_critical": false,
+    "fail_on_high": false,
+    "max_critical_findings": 0,
+    "max_high_findings": 5,
+    "max_medium_findings": 20,
+    "export_sarif": false,
+    "export_junit": false
+  },
+  
+  "performance": {
+    "use_cache": true,
+    "cache_duration_hours": 24,
+    "max_memory_mb": 1024,
+    "log_level": "INFO"
+  },
+  
+  "custom_patterns": {
+    "enabled": false,
+    "patterns_file": "./config/custom_patterns.json"
+  },
+  
+  "notifications": {
+    "enabled": false,
+    "email": {
+      "enabled": false,
+      "recipients": [],
+      "smtp_server": "",
+      "smtp_port": 587
+    },
+    "webhook": {
+      "enabled": false,
+      "url": "",
+      "on_critical": true,
+      "on_high": false
+    }
+  },
+  
+  "version": "1.0.0",
+  "last_updated": "2026-01-28"
+
+}

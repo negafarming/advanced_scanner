@@ -1,0 +1,25 @@
+# Windows Security Auditor - Python Dependencies
+
+# Core dependencies
+setuptools>=68.0.0
+wheel>=0.41.0
+
+# GUI dependencies (Tkinter is built-in for Python on Windows)
+# No additional packages needed for Tkinter
+
+# Report generation
+# No external dependencies for HTML generation (using built-in templates)
+
+# Optional: PDF generation (if needed)
+# reportlab>=4.0.0
+# pypdf2>=3.0.0
+
+# Optional: Advanced analysis
+# bandit>=1.7.5  # Python security linter
+# pylint>=3.0.0  # Code quality checker
+
+# Development dependencies (optional)
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# black>=23.7.0
+# mypy>=1.5.0
